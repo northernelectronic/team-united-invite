@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="You're Invited" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="theme-color" content="#c3e4f4" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>You're Invited</title>
+  <link rel="icon" type="image/png" href="./icons/favicon.png" />
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div id="app">
+    <section id="screen-loading" class="screen card-screen" data-screen="loading">
+      <div class="card landing-card">
+        <p class="kicker">Playfair Fun &amp; Games</p>
+        <h1>Getting the court ready…</h1>
+        <div class="load-bar" aria-hidden="true"><i id="load-bar"></i></div>
+      </div>
+    </section>
+    <section id="screen-landing" class="screen card-screen" data-screen="landing" hidden>
+      <div class="card landing-card">
+        <img class="crest" src="./assets/gcvc-united-logo.jpg" alt="" width="160" height="160" />
+        <p class="kicker" id="landing-kicker">You're Invited to Play</p>
+        <h1 id="landing-line">Mike Moncada is inviting you to a Christmas party!</h1>
+        <p class="subline" id="landing-subline">But only the worthy get the details!</p>
+        <button type="button" class="btn primary" id="btn-begin">Open the game</button>
+        <p class="trust">No ads. No tracking. Play the short level to open the invite.</p>
+      </div>
+      <footer class="madeby"></footer>
+    </section>
+
+    <section id="screen-howto" class="screen card-screen" data-screen="howto" hidden>
+      <div class="card">
+        <h1>How to play</h1>
+        <div class="swipe-icon" aria-hidden="true">
+          <svg viewBox="0 0 160 110" width="160" height="110">
+            <rect x="58" y="28" width="28" height="48" rx="10" fill="#1c1a17" stroke="#f6f1e8" stroke-width="3"/>
+            <circle cx="72" cy="40" r="3" fill="#f6f1e8"/>
+            <path d="M44 22 C 44 8, 72 4, 80 18" fill="none" stroke="#c4122a" stroke-width="4" stroke-linecap="round"/>
+            <path d="M72 8 l8 12 l-16 2" fill="#c4122a"/>
+            <path d="M28 70 C 20 52, 48 36, 56 54" fill="none" stroke="#c4122a" stroke-width="4" stroke-linecap="round"/>
+            <path d="M24 48 l2 16 l14 -8" fill="#c4122a"/>
+            <path d="M116 70 C 124 52, 96 36, 88 54" fill="none" stroke="#c4122a" stroke-width="4" stroke-linecap="round"/>
+            <path d="M120 48 l-2 16 l-14 -8" fill="#c4122a"/>
+          </svg>
+          <span>Tap or swipe</span>
+        </div>
+        <ol class="howto-lines" id="howto-lines"></ol>
+        <button type="button" class="btn primary" id="btn-start">Start the level</button>
+      </div>
+      <footer class="madeby"></footer>
+    </section>
+
+    <section id="screen-game" class="screen game-screen" data-screen="game" hidden>
+      <div id="hud">
+        <div class="hud-pill">Hits <b id="hud-hits">0</b><span id="hud-goal">/8</span></div>
+        <div class="hud-pill" id="hud-lives" aria-label="Lives"></div>
+        <button type="button" class="hud-quiet" id="btn-mute" aria-label="Mute or unmute sound">Sound on</button>
+      </div>
+      <canvas id="court" width="390" height="700" aria-label="Christmas volleyball level: send balls at hugging snowmen"></canvas>
+      <div id="assist-bar" class="assist-bar" hidden>
+        <p id="assist-copy">Need a hand? We will make this easier.</p>
+        <button type="button" class="btn secondary" id="btn-skip">Skip to the invite</button>
+      </div>
+      <p class="game-hint" id="game-hint">Tap or swipe a lane to hit the ball</p>
+      <footer class="madeby"></footer>
+    </section>
+
+    <section id="screen-reveal" class="screen card-screen" data-screen="reveal" hidden>
+      <div class="card invite-card">
+        <img class="crest large" src="./assets/gcvc-united-logo.jpg" alt="GCVC United" width="200" height="200" />
+        <p class="kicker">You did it. Here is the invite.</p>
+        <h1 id="event-name">Team United Christmas Party</h1>
+        <dl class="details">
+          <div><dt>Date</dt><dd id="field-date">Saturday, December 12, 2026</dd></div>
+          <div><dt>Time</dt><dd id="field-time">4:00 PM</dd></div>
+          <div><dt>Location</dt><dd id="field-location">223A Hickory Lane, Barrie</dd></div>
+        </dl>
+        <aside id="cookie-contest" class="cookie-contest">
+          <span class="cookie-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" width="36" height="36" focusable="false">
+              <circle cx="24" cy="24" r="18" fill="#e8a85a" stroke="#b56a28" stroke-width="2.5"/>
+              <circle cx="24" cy="24" r="15.2" fill="none" stroke="#d4893a" stroke-width="1.4" opacity=".7"/>
+              <circle cx="16.5" cy="20" r="2.3" fill="#5c3a22"/>
+              <circle cx="25" cy="15.5" r="2" fill="#5c3a22"/>
+              <circle cx="31.5" cy="21.5" r="2.4" fill="#5c3a22"/>
+              <circle cx="19" cy="29.5" r="2.1" fill="#5c3a22"/>
+              <circle cx="29.2" cy="30.2" r="1.8" fill="#5c3a22"/>
+              <circle cx="23.2" cy="24.2" r="1.6" fill="#5c3a22"/>
+            </svg>
+          </span>
+          <p id="cookie-contest-note">Optional cookie contest! Must be homemade and Christmas themed.</p>
+        </aside>
+        <form id="rsvp-form" class="rsvp-form" action="#" method="post">
+          <h2>Will you be there?</h2>
+          <label>
+            <span>Family name</span>
+            <input id="rsvp-family" name="familyName" type="text" required autocomplete="family-name" placeholder="The Moncadas" />
+          </label>
+          <label>
+            <span>How many will attend</span>
+            <input id="rsvp-count" name="attendingCount" type="number" required min="1" max="30" inputmode="numeric" value="1" />
+          </label>
+          <label>
+            <span>What dish are you bringing</span>
+            <input id="rsvp-dish" name="dish" type="text" autocomplete="off" placeholder="Cookies, a salad, or leave blank" />
+          </label>
+          <label class="rsvp-check" id="rsvp-cookie-label">
+            <input id="rsvp-cookie" name="cookieContest" type="checkbox" />
+            <span>We're entering the cookie contest</span>
+          </label>
+          <button type="submit" class="btn primary" id="rsvp-submit">Send RSVP</button>
+          <p class="rsvp-error" id="rsvp-error" hidden></p>
+        </form>
+        <div id="rsvp-thanks" class="rsvp-thanks" hidden>
+          <p class="thanks-lead" id="rsvp-thanks-lead">Thank you!</p>
+          <p id="rsvp-thanks-body">Your RSVP is in.</p>
+        </div>
+        <p class="trust" id="privacy-note">No ads. No tracking. The only information collected is what you type in the RSVP, if you choose to send it.</p>
+      </div>
+      <footer class="madeby"></footer>
+    </section>
+  </div>
+  <script src="./game.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "hostName": "Mike Moncada",
+  "landingLine": "Mike Moncada is inviting you to a Christmas party!",
+  "landingSubline": "But only the worthy get the details!",
+  "howToPlay": [
+    "Balls are tossed up for you. Tap or swipe a lane to hit each one.",
+    "Send the ball at the snowmen before they waddle in for a hug.",
+    "Get 8 hits to open the invite. A hug costs a heart, but it is all in fun."
+  ],
+  "eventName": "Team United Christmas Party",
+  "date": "Saturday, December 12, 2026",
+  "time": "4:00 PM",
+  "location": "223A Hickory Lane, Barrie",
+  "rsvp": "[RSVP]",
+  "rsvpEndpoint": "local",
+  "rsvpStorageKey": "playfair-team-united-rsvp",
+  "madeBy": "Playfair Fun & Games",
+  "tagline": "You're Invited to Play",
+  "hitsToWin": 8,
+  "lives": 3,
+  "failsBeforeAssist": 3,
+  "privacyNote": "No ads. No tracking. The only information collected is what you type in the RSVP, if you choose to send it.",
+  "cookieContestNote": "Optional cookie contest! Must be homemade and Christmas themed."
+}
