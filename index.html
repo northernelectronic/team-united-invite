@@ -14,9 +14,39 @@
   <link rel="icon" type="image/png" href="./icons/favicon.png" />
   <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
   <link rel="manifest" href="./manifest.webmanifest" />
-  <link rel="stylesheet" href="./styles.css" />
+  <style>.card-screen{background:linear-gradient(#141c2e47,#141c2e6b),url(./assets/sprites/winter-bg.jpg) 50%/cover no-repeat,#c3e4f4!important}</style>
+  <script type="module" crossorigin src="./assets/index-BU_Hv9Vd.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-MxS2WfaX.css">
 </head>
 <body>
+  <div id="game" class="hidden"></div>
+  <div id="ui">
+    <div id="hud" class="hidden">
+      <div id="topbar">
+        <div id="lives"></div>
+        <div id="scoreBox"><b id="score">0</b><span id="waveLbl">WAVE 1</span></div>
+        <button id="pauseBtn" class="round" type="button" aria-label="Pause">II</button>
+      </div>
+      <div id="combo"><div id="comboFill"></div><span id="comboTxt">COMBO 0</span><b id="mult">x1</b></div>
+      <div id="power" class="hidden"></div>
+      <div id="lanes"><i data-l="0">↖</i><i data-l="1">⬆</i><i data-l="2">↗</i></div>
+      <div id="assist-bar" hidden>
+        <p id="assist-copy">Need a hand? We will make this easier.</p>
+        <button type="button" class="btn secondary" id="btn-skip">Skip to the invite</button>
+      </div>
+      <footer class="madeby"></footer>
+    </div>
+    <div id="prompt" class="hidden"></div>
+    <div id="banner" class="hidden"></div>
+    <div id="pop" class="hidden"></div>
+    <div id="flash"></div>
+    <div id="pause" class="screen hidden">
+      <h2>PAUSED</h2>
+      <button id="resumeBtn" class="big" type="button">▶ Resume</button>
+      <button id="quitBtn" class="mid" type="button">Open the invite</button>
+    </div>
+  </div>
+
   <div id="app">
     <section id="screen-loading" class="screen card-screen" data-screen="loading">
       <div class="card landing-card">
@@ -36,44 +66,14 @@
       </div>
       <footer class="madeby"></footer>
     </section>
-
     <section id="screen-howto" class="screen card-screen" data-screen="howto" hidden>
       <div class="card">
         <h1>How to play</h1>
-        <div class="swipe-icon" aria-hidden="true">
-          <svg viewBox="0 0 160 110" width="160" height="110">
-            <rect x="58" y="28" width="28" height="48" rx="10" fill="#1c1a17" stroke="#f6f1e8" stroke-width="3"/>
-            <circle cx="72" cy="40" r="3" fill="#f6f1e8"/>
-            <path d="M44 22 C 44 8, 72 4, 80 18" fill="none" stroke="#c4122a" stroke-width="4" stroke-linecap="round"/>
-            <path d="M72 8 l8 12 l-16 2" fill="#c4122a"/>
-            <path d="M28 70 C 20 52, 48 36, 56 54" fill="none" stroke="#c4122a" stroke-width="4" stroke-linecap="round"/>
-            <path d="M24 48 l2 16 l14 -8" fill="#c4122a"/>
-            <path d="M116 70 C 124 52, 96 36, 88 54" fill="none" stroke="#c4122a" stroke-width="4" stroke-linecap="round"/>
-            <path d="M120 48 l-2 16 l-14 -8" fill="#c4122a"/>
-          </svg>
-          <span>Tap or swipe</span>
-        </div>
         <ol class="howto-lines" id="howto-lines"></ol>
         <button type="button" class="btn primary" id="btn-start">Start the level</button>
       </div>
       <footer class="madeby"></footer>
     </section>
-
-    <section id="screen-game" class="screen game-screen" data-screen="game" hidden>
-      <div id="hud">
-        <div class="hud-pill">Hits <b id="hud-hits">0</b><span id="hud-goal">/8</span></div>
-        <div class="hud-pill" id="hud-lives" aria-label="Lives"></div>
-        <button type="button" class="hud-quiet" id="btn-mute" aria-label="Mute or unmute sound">Sound on</button>
-      </div>
-      <canvas id="court" width="390" height="700" aria-label="Christmas volleyball level: send balls at hugging snowmen"></canvas>
-      <div id="assist-bar" class="assist-bar" hidden>
-        <p id="assist-copy">Need a hand? We will make this easier.</p>
-        <button type="button" class="btn secondary" id="btn-skip">Skip to the invite</button>
-      </div>
-      <p class="game-hint" id="game-hint">Tap or swipe a lane to hit the ball</p>
-      <footer class="madeby"></footer>
-    </section>
-
     <section id="screen-reveal" class="screen card-screen" data-screen="reveal" hidden>
       <div class="card invite-card">
         <img class="crest large" src="./assets/gcvc-united-logo.jpg" alt="GCVC United" width="200" height="200" />
@@ -129,6 +129,5 @@
       <footer class="madeby"></footer>
     </section>
   </div>
-  <script src="./game.js"></script>
 </body>
 </html>

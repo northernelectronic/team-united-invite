@@ -3,9 +3,9 @@
   "landingLine": "Mike Moncada is inviting you to a Christmas party!",
   "landingSubline": "But only the worthy get the details!",
   "howToPlay": [
-    "Balls are tossed up for you. Tap or swipe a lane to hit each one.",
-    "Send the ball at the snowmen before they waddle in for a hug.",
-    "Get 8 hits to open the invite. A hug costs a heart, but it is all in fun."
+    "Your teammate keeps setting you the ball. You jump on your own.",
+    "Swipe up when the ring turns gold at the top of the jump.",
+    "Swipe up-left, straight up (or tap), or up-right to pick a lane. Spike the snowmen before they waddle in for a hug."
   ],
   "eventName": "Team United Christmas Party",
   "date": "Saturday, December 12, 2026",
@@ -20,5 +20,6 @@
   "lives": 3,
   "failsBeforeAssist": 3,
   "privacyNote": "No ads. No tracking. The only information collected is what you type in the RSVP, if you choose to send it.",
-  "cookieContestNote": "Optional cookie contest! Must be homemade and Christmas themed."
+  "cookieContestNote": "Optional cookie contest! Must be homemade and Christmas themed.",
+  "wavesToWin": 3
 }
