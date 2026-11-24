@@ -3,9 +3,9 @@
   "landingLine": "Mike Moncada is inviting you to a Christmas party!",
   "landingSubline": "But only the worthy get the details!",
   "howToPlay": [
-    "Your teammate keeps setting you the ball. You jump on your own.",
-    "Swipe up when the ring turns gold at the top of the jump.",
-    "Swipe up-left, straight up (or tap), or up-right to pick a lane. Spike the snowmen before they waddle in for a hug."
+    "Swipe left or right to steer the sled between lanes.",
+    "Swipe up to jump over hurdles and gift stacks. Swipe down to duck under hanging garlands.",
+    "Stay on your feet for 60 seconds, then ride the big jump into a pile of presents at the North Pole!"
   ],
   "eventName": "Team United Christmas Party",
   "date": "Saturday, December 12, 2026",
@@ -21,5 +21,7 @@
   "failsBeforeAssist": 3,
   "privacyNote": "No ads. No tracking. The only information collected is what you type in the RSVP, if you choose to send it.",
   "cookieContestNote": "Optional cookie contest! Must be homemade and Christmas themed.",
-  "wavesToWin": 3
+  "wavesToWin": 3,
+  "gameTitle": "Team United Christmas Sled Run",
+  "surviveSeconds": 60
 }

@@ -1,7 +1,7 @@
 {
   "name": "Mike Moncada is inviting you to a Christmas party",
   "short_name": "You're Invited",
-  "description": "Play a short level to open the Team United Christmas party invite.",
+  "description": "Ride a short Christmas sled run to open the Team United Christmas party invite.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
@@ -9,7 +9,17 @@
   "background_color": "#c3e4f4",
   "theme_color": "#c3e4f4",
   "icons": [
-    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
-    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
   ]
 }

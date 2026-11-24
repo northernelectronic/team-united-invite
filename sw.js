@@ -1,5 +1,5 @@
 /* Local offline cache only. No analytics, no third-party requests. */
-const CACHE = "team-united-invite-v7";
+const CACHE = "team-united-invite-v8";
 self.addEventListener("install", (event) => { self.skipWaiting(); });
 self.addEventListener("activate", (event) => {
   event.waitUntil(

@@ -15,34 +15,51 @@
   <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
   <link rel="manifest" href="./manifest.webmanifest" />
   <style>.card-screen{background:linear-gradient(#141c2e47,#141c2e6b),url(./assets/sprites/winter-bg.jpg) 50%/cover no-repeat,#c3e4f4!important}</style>
-  <script type="module" crossorigin src="./assets/index-3RvqOWWN.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-DcRNy6J8.css">
+  <script type="module" crossorigin src="./assets/index-B9tIDs1j.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-CxQJmQt2.css">
 </head>
 <body>
-  <div id="game" class="hidden"></div>
+  <div id="game"></div>
+  <div id="speed"></div>
+  <div id="vignette"></div>
+  <div id="wipe" aria-hidden="true">
+    <div class="sheet"></div>
+    <div class="cover"></div>
+    <div class="burst">🎁 ❄️ 🎀 🎄 ❄️ 🎁</div>
+  </div>
+
   <div id="ui">
     <div id="hud" class="hidden">
-      <div id="topbar">
-        <div id="lives"></div>
-        <div id="scoreBox"><b id="score">0</b><span id="waveLbl">WAVE 1</span></div>
-        <button id="pauseBtn" class="round" type="button" aria-label="Pause">II</button>
+      <div id="pole-meter" aria-label="Time to the North Pole">
+        <div id="pole-fill"></div>
+        <span id="pole-time">1:00</span>
+        <b id="pole-label">North Pole</b>
       </div>
-      <div id="combo"><div id="comboFill"></div><span id="comboTxt">COMBO 0</span><b id="mult">x1</b></div>
-      <div id="power" class="hidden"></div>
-      <div id="lanes"><i data-l="0">↖</i><i data-l="1">⬆</i><i data-l="2">↗</i></div>
-      <div id="assist-bar" hidden>
-        <p id="assist-copy">Need a hand? We will make this easier.</p>
-        <button type="button" class="btn secondary" id="btn-skip">Skip to the invite</button>
-      </div>
+      <div class="pill" id="orns"><span class="ico orn"></span><b id="ornCount">0</b></div>
+      <button id="pauseBtn" class="round" type="button" aria-label="Pause">II</button>
+      <div id="powers"></div>
     </div>
-    <div id="prompt" class="hidden"></div>
+    <div id="hint" class="hidden">Swipe ⬅️ ➡️ to steer<br>⬆️ jump &nbsp; ⬇️ duck</div>
     <div id="banner" class="hidden"></div>
-    <div id="pop" class="hidden"></div>
-    <div id="flash"></div>
+
+    <div id="assist-bar" hidden>
+      <p id="assist-copy">Need a hand? We will make this a little easier.</p>
+      <button type="button" class="btn secondary" id="btn-skip">Skip to the invite</button>
+    </div>
+
+    <div id="retry" class="screen hidden">
+      <h2 id="retryTitle">Oops!</h2>
+      <p class="tip" id="retryMsg">Quick! Hop back on the sled.</p>
+      <button id="againBtn" class="big" type="button">↻ Try again</button>
+      <button id="retry-skip" class="mid hidden" type="button">Skip to the invite</button>
+    </div>
+
     <div id="pause" class="screen hidden">
-      <h2>PAUSED</h2>
+      <h2>Paused</h2>
       <button id="resumeBtn" class="big" type="button">▶ Resume</button>
       <button id="quitBtn" class="mid" type="button">Open the invite</button>
+      <button id="gfxBtn" class="small" type="button">✨ Auto</button>
+      <button id="muteBtn" class="small" type="button">🔊 Sound</button>
     </div>
   </div>
 
@@ -50,7 +67,7 @@
     <section id="screen-loading" class="screen card-screen" data-screen="loading">
       <div class="card landing-card">
         <p class="kicker">Playfair Fun &amp; Games</p>
-        <h1>Getting the court ready…</h1>
+        <h1>Getting the sled ready…</h1>
         <div class="load-bar" aria-hidden="true"><i id="load-bar"></i></div>
       </div>
     </section>
@@ -60,8 +77,9 @@
         <p class="kicker" id="landing-kicker">You're Invited to Play</p>
         <h1 id="landing-line">Mike Moncada is inviting you to a Christmas party!</h1>
         <p class="subline" id="landing-subline">But only the worthy get the details!</p>
+        <p class="game-title" id="game-title">Team United Christmas Sled Run</p>
         <button type="button" class="btn primary" id="btn-begin">Open the game</button>
-        <p class="trust">No ads. No tracking. Play the short level to open the invite.</p>
+        <p class="trust">No ads. No tracking. Ride the short sled run to open the invite.</p>
       </div>
       <footer class="madeby"></footer>
     </section>

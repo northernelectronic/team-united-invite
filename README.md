@@ -4,7 +4,7 @@ Playfair Fun & Games. Tagline: You're Invited to Play.
 
 Test-only GitHub Pages link. rsvpEndpoint is "local" (replies stay in the browser; nothing is emailed). The page is noindex. This is not a public product launch.
 
-The level uses the GCVC United Zombie Spike engine (same camera, swipe-when-gold, timing, hit feel, and audio), reskinned as a cartoon Christmas court: lit-up trees, snow, the v2 girl, and hugging snowmen.
+The level is a retitled fork of Quinsy Mattilla Christmas (v1.1 engine, controls, graphics tiers, and feel): Team United Christmas Sled Run. Survive 60 seconds, launch off the jump, and crash into a pile of presents at the North Pole to open the invite.
 
 ## Open it
 
